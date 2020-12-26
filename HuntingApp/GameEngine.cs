@@ -11,6 +11,11 @@ namespace HuntingApp
     {
         private static readonly Random random = new Random();
         private static readonly object syncLock = new object();
+
+        public void AnimalAttack()
+        {
+
+        }
         public Animal HuntAnimal()
         {
 
@@ -23,31 +28,37 @@ namespace HuntingApp
             {
                 animal.AnimalType = "cyote";
                 animal.Points = 10;
+                animal.DamageDealt = 20;
             }
             else if (r == 2)
             {
                 animal.AnimalType = "snake";
                 animal.Points = 2;
+                animal.DamageDealt = 50;
             }
             else if (r == 3)
             {
                 animal.AnimalType = "deer";
                 animal.Points = 20;
+                animal.DamageDealt = 2;
             }
             else if (r == 4)
             {
                 animal.AnimalType = "wolf";
                 animal.Points = 5;
+                animal.DamageDealt = 22;
             }
             else if (r == 5)
             {
                 animal.AnimalType = "bear";
                 animal.Points = 30;
+                animal.DamageDealt = 70;
             }
             else
             {
                 animal.AnimalType = "No animal try again ";
                 animal.Points = 0;
+                animal.DamageDealt = 0;
             }
 
 

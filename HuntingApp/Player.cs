@@ -11,6 +11,7 @@ namespace HuntingApp
         {
             public string Username = "blank";
             public int Score = 0;
+            public int Health = 100;
 
         }
     

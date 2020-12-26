@@ -10,8 +10,8 @@ namespace HuntingApp
     {
         public string AnimalType = "deer";
         public int Points = 2;
-
-
+        public int DamageDealt = 30;
+        
         //ublic Fish(string fishType, int Points)
         //{
         //FishType = FishType;
