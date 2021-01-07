@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.IO;
 namespace HuntingApp
 {
     class Program
@@ -79,55 +79,80 @@ namespace HuntingApp
             {
                 Console.WriteLine("you have won because your health was over 0!!!!!");
             }
+            
+            string now = System.DateTime.Now.ToString("yyyyMMddHHmmsss");
+           string filename = "huntingapp" + now + ".txt";
+            using (StreamWriter outputfile = new StreamWriter(filename))
+            {
 
-                //Animal animal1 = game.HuntAnimal();
-
-                //Console.WriteLine("animal 1 animalType " + animal1.AnimalType);
-                //Console.WriteLine("animal1 points " + animal1.Points);
-                //Console.WriteLine(" this animal has done : " + animal1.DamageDealt);
-
-                //player1.Score = player1.Score + animal1.Points;
-                //Console.WriteLine("player1 Score " + player1.Score);
-                //player1.Health = player1.Health - animal1.DamageDealt;
-                //Console.WriteLine("your health right now is :" + player1.Health);
-
-
-                //Animal animal2 = game.HuntAnimal();
-
-                //Console.WriteLine("animal 2 animalType " + animal2.AnimalType);
-                //Console.WriteLine("animal 2 points " + animal2.Points);
-                //Console.WriteLine(" this animal has done : " + animal2.DamageDealt);
-
-                //player1.Score = player1.Score + animal2.Points;
-                //Console.WriteLine("player1 Score " + player1.Score);
-                //player1.Health = player1.Health - animal2.DamageDealt;
-                //Console.WriteLine("your health right now is :" + player1.Health);
-
-
-                //Animal animal3 = game.HuntAnimal();
-
-                //Console.WriteLine("animal 3 animalType " + animal3.AnimalType);
-                //Console.WriteLine("animal 3 points " + animal3.Points);
-                //Console.WriteLine(" this animal has done : " + animal3.DamageDealt);
-
-                //player1.Score = player1.Score + animal3.Points + animal3.Points;
-                //Console.WriteLine("player1 Score " + player1.Score);
-                //player1.Health = player1.Health - animal3.DamageDealt;
-                //Console.WriteLine("your health right now is :" + player1.Health);
-
-                //if (player1.Health <= 0)
-                //{
-                //    Console.WriteLine("You are dead meat for the animals. You are very juicy too to them.");
-                //}
-                //else
-                //{
-                //    Console.WriteLine("you have won!!");
-                //}
-
-                //for (int attempt = 1; attempt <= 5; attempt++)
-                //{
-                //    Console.WriteLine("attempt = " + attempt);
-                //}
+                outputfile.WriteLine("*******************************************************************");
+                outputfile.WriteLine("FINAL RESULT");
+                outputfile.WriteLine("Date:" + now);
+                    outputfile.WriteLine("Username:"+ player1.Username);
+                outputfile.WriteLine("player Score: " + player1.Score);
+                outputfile.WriteLine("player health: " + player1.Health);
+                if (player1.Health <= 0)
+                {
+                    outputfile.WriteLine("You are dead meat for the animals. You are very juicy too to them.");
+                }
+                else
+                {
+                    outputfile.WriteLine("you have won because your health was over 0!!!!!");
+                }
             }
+
+
+
+            //Animal animal1 = game.HuntAnimal();
+
+            //Console.WriteLine("animal 1 animalType " + animal1.AnimalType);
+            //Console.WriteLine("animal1 points " + animal1.Points);
+            //Console.WriteLine(" this animal has done : " + animal1.DamageDealt);
+
+            //player1.Score = player1.Score + animal1.Points;
+            //Console.WriteLine("player1 Score " + player1.Score);
+            //player1.Health = player1.Health - animal1.DamageDealt;
+            //Console.WriteLine("your health right now is :" + player1.Health);
+
+
+            //Animal animal2 = game.HuntAnimal();
+
+            //Console.WriteLine("animal 2 animalType " + animal2.AnimalType);
+            //Console.WriteLine("animal 2 points " + animal2.Points);
+            //Console.WriteLine(" this animal has done : " + animal2.DamageDealt);
+
+            //player1.Score = player1.Score + animal2.Points;
+            //Console.WriteLine("player1 Score " + player1.Score);
+            //player1.Health = player1.Health - animal2.DamageDealt;
+            //Console.WriteLine("your health right now is :" + player1.Health);
+
+
+            //Animal animal3 = game.HuntAnimal();
+
+            //Console.WriteLine("animal 3 animalType " + animal3.AnimalType);
+            //Console.WriteLine("animal 3 points " + animal3.Points);
+            //Console.WriteLine(" this animal has done : " + animal3.DamageDealt);
+
+            //player1.Score = player1.Score + animal3.Points + animal3.Points;
+            //Console.WriteLine("player1 Score " + player1.Score);
+            //player1.Health = player1.Health - animal3.DamageDealt;
+            //Console.WriteLine("your health right now is :" + player1.Health);
+
+            //if (player1.Health <= 0)
+            //{
+            //    Console.WriteLine("You are dead meat for the animals. You are very juicy too to them.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("you have won!!");
+            //}
+
+            //for (int attempt = 1; attempt <= 5; attempt++)
+            //{
+            //    Console.WriteLine("attempt = " + attempt);
+            //}
+        }
     }
 }
+
+
