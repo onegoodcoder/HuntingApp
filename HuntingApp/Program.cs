@@ -10,6 +10,7 @@ namespace HuntingApp
     {
         static void Main(string[] args)
         {
+            
             #region Print welcome message and ask for username 
 
             //printing welcome mesage
@@ -25,35 +26,35 @@ namespace HuntingApp
             Console.WriteLine("hello " + userInput);
 
             #endregion
-
-            #region create player object and set score to 0
+                       #region create player object and set score to 0
             //created a new instance and set the username 
             Player player1 = new Player();
             player1.Username = userInput;
             player1.Score = 0;
             player1.Health = 100;
 
-            Console.WriteLine("player1 username: " + player1.Username);
-            Console.WriteLine("player1 Score: " + player1.Score);
-            Console.WriteLine("player1 health: " + player1.Health + "hp");
+            Console.WriteLine("player  username: " + player1.Username);
+            
+            Console.WriteLine("player Score: " + player1.Score);
+            Console.WriteLine("player  health: " + player1.Health + "hp");
             #endregion
 
 
-
+            
             GameEngine game = new GameEngine();
 
-            for (int attempt = 1; attempt <= 4; attempt++)
+            for (int attempt = 1; attempt <= 10; attempt++)
             {
                 Console.WriteLine("attempt = " + attempt);
                 Animal animal1 = game.HuntAnimal();
-                Console.WriteLine("animal 1 animalType " + animal1.AnimalType);
-                Console.WriteLine("animal1 points " + animal1.Points);
+                Console.WriteLine("animal " + attempt + " animalType " + animal1.AnimalType);
+                Console.WriteLine("animal " + attempt  + animal1.Points);
                 Console.WriteLine(" this animal has done : " + animal1.DamageDealt);
 
                 player1.Score = player1.Score + animal1.Points;
-                Console.WriteLine("player1 Score " + player1.Score);
+                Console.WriteLine("       Score " + player1.Score);
                 player1.Health = player1.Health - animal1.DamageDealt;
-                Console.WriteLine("your health right now is :" + player1.Health);
+                Console.WriteLine("     your health right now is :" + player1.Health);
 
                 if (player1.Health <= 0)
                 {
